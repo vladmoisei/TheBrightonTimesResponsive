@@ -19,6 +19,10 @@ footer{
 	font-weight: 500;
 }
 
+body{
+	line-height: 1.5em;
+}
+
 
 @media screen and (max-width: 549px) {
 	body{
