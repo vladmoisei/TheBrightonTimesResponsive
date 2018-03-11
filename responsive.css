@@ -23,6 +23,43 @@ body{
 	line-height: 1.5em;
 }
 
+.snippet{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.snippet__title{
+	order: 0;
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+.snippet__thumbnail{
+	order: 1;
+	width: 30%;
+	height: 150px;
+	margin: 0;
+	padding-right: 10px;
+
+}
+
+.snippet__thumbnail >img{
+	width: 100%;
+}
+
+.snippet__description{
+	-webkit-line-clamp:3;
+	max-height: 3.7em;
+	order: 2;
+	width: 70%;
+	margin: 0;
+	padding-bottom: 1em;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	
+}
 
 @media screen and (max-width: 549px) {
 	body{
@@ -76,7 +113,7 @@ body{
 
 	.hero {
 		background-image: url("./images/dog-350.jpg");
-		line-height: 2em;
+		/*line-height: 2em;*/
 	}
 	.weather{
 		line-height: 2em;
@@ -92,6 +129,7 @@ body{
 
 	.hero article{
 		overflow:hidden;
+		height: 50%;
 	}
 
 	.weather{
@@ -107,91 +145,172 @@ body{
 		height: 350px;
 	}
 
-	.longName{
+	.longName, .scores__location{
 		display: none;
 	}
 
-	.text {
+	/*.text {
 		overflow:hidden; line-height: 1.2em; 
 		max-height: 3.8em;
+		}*/
+
+
+
+	}
+
+	@media screen and (min-width: 550px){
+		body{font-size: 16px;}
+		.header__title{
+			font-size: 3em;
+			margin-bottom: 15px;
+			vertical-align: bottom;
+		}
+		.hero{
+			order: 0;
+			width: 60%;
+			background-image: url("./images/dog-550.jpg");
+		}
+
+		.weather{
+			order: 1;
+			width: 40%;
+		}
+		.weather__today__image{
+			margin-left: 10px;
+			margin-right: 20px;
+		}
+
+		.weather__next__item{
+			font-weight: 500;
+			font-size: 14px;
+		}
+
+		.news__title{
+			font-weight: 500;
+		}
+
+		.shortName{
+			display: none;
+		}
+
+		.hero article p{
+			display: none;
+		}
+
+		.longName{
+			display: none;
+		}
+
+		.shortName{
+			display: table-cell;
+		}
+
+		.scores__table td:nth-child(3){
+			text-align: center;
+		}
+		/*.text {
+			overflow: hidden;
+			line-height: 1.2em;
+			max-height: 3.8em;
+		}*/
+
+	}
+
+	@media screen and (min-width: 700px){
+
+		.header__logo{
+			height: 92px;
+		}
+
+		.header__title{
+			margin-bottom: 25px;
+			font-size: 4em;
+		}
+		.hero{
+			order: 0;
+			width: 50%;
+			background-image: url("./images/dog.jpg");
+		}
+
+		.news__title{
+			font-size: 18px;
+		}
+
+		.top-news{
+			order: 1;
+			width: 50%;
+			height: 350px;
+		}
+		.scores {
+			order: 2;
+			width: 60%;
+		}
+		.weather {
+			order: 3;
+		}
+
+		.scores__location{
+			display: none;
+		}
+
+		.snippet__thumbnail {
+			width: 150px;
+		}
+
+	}
+
+	@media screen and (min-width: 850px){
+		main, .header__inner, .nav, .content {
+			width: 850px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+
+		.hero{
+			background-image: url("./images/dog.jpg");
+		}
+
+		.snippet__thumbnail {
+			width: 200px;
+
+		}
+		.hero article{
+		line-height: 1.2em;
+		height: 50%;
+	    }
+
+	    .hero >.description p{	
+	    display: block;
+	    }
+
+
 	}
 
 
-
-}
-
-@media screen and (min-width: 550px){
-	body{font-size: 16px;}
-	.header__title{
-		font-size: 3em;
-		margin-bottom: 0;
-	}
-	.hero{
-		order: 0;
-		width: 60%;
-		background-image: url("./images/dog-550.jpg");
+	@media screen and (max-width: 430px){
+		.hero article p{
+			display: none;
+		}
 	}
 
-	.weather{
-		order: 1;
-		width: 40%;
-	}
-	.weather__today__image{
-		margin-left: 10px;
-		margin-right: 20px;
+	@media screen and (min-width: 568px){
+		.weather__next__item{
+			font-size: 16px;
+		}
 	}
 
-	.weather__next__item{
-		font-weight: 500;
+	@media screen and (min-width: 649px){
+		.longName{
+			display: table-cell;
+		}
+		.shortName{
+			display: none;
+		}
 	}
 
-	.shortName{
-		display: none;
+	@media screen and (min-width: 568px){
+		.snippet__description{
+			-webkit-line-clamp: 4;
+			max-height: 4.8em;
+		}
 	}
-
-	.hero article p{
-		display: none;
-	}
-
-
-
-}
-
-@media screen and (min-width: 700px){
-	.hero{
-		order: 0;
-		width: 50%;
-		background-image: url("./images/dog.jpg");
-	}
-
-	.top-news{
-		order: 1;
-		width: 50%;
-	}
-	.scores {
-		order: 2;
-		width: 60%;
-	}
-	.weather {
-		order: 3;
-	}
-}
-
-@media screen and (min-width: 850px){
-	.header__inner, .nav, .content{
-		width: 850px;
-		margin-left:auto;
-		margin-right:auto;
-	}
-
-	.hero{
-		background-image: url("./images/dog.jpg");
-	}
-}
-
-
-@media screen and (max-width: 430px){
-	.hero article p{
-		display: none;
-	}
-}
